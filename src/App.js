@@ -27,11 +27,16 @@ class App extends Component {
       <div className="grid-container">
         {images.map(image => {
           return (
-            <Popover content={<div><img src={image.url}/></div>} title={image.title} trigger="hover">
             <div key={image.id} className="grid-item">
-              <img key={image.id} src={image.thumbnailUrl}/>
-            </div>
-            </Popover>
+              <Popover 
+                content={<div><img src={image.url}/></div>} 
+                title={image.title} 
+                trigger="click"
+                placement="bottom"
+              >
+                <img src={image.thumbnailUrl}/>
+              </Popover>
+              </div>
           );
         })}
       </div>
